@@ -1,0 +1,22 @@
+#footer{
+    text-align: center;
+    background-color: rgb(128, 243, 214);
+}
+h3{
+    font-style: Arial, sans-serif;
+}
+#thead{
+    background-color: blanchedalmond;
+}
+#introducao {
+    background: rgb(68, 230, 252);
+    width:21%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.destaque{
+    background-color: rgb(255, 230, 0);
+    width:15%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
