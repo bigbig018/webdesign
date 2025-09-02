@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> </header>
+    <main>
+        <!-- Introdução das Imagens, precisa colocar Links 
+         melhores, e estilizá-los com Width Height e Alt-->
+        <h3> Imagens</h3>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-epExjI6-AvrT5KicKljbrSi8_IqBgFIu-g&s">
+                <img src="">
+                <img src="">
+            </div>
+
+           <!-- Precisa colocar um vídeo melhor, em MP4!!
+            Precisa estilizar com Width e Poster--> 
+        <h3> Video</h3>
+            <video src="https://www.youtube.com/watch?v=TWHmpxmIP6I" controls> </video>
+
+            <!-- Precisa colocar um áudio válido em .MP3 e .OGG-->
+        <h3> Audio</h3>
+            <audio controls src="https://www.youtube.com/watch?v=jHLEy7WRXoI"> </audio>
+            <audio controls src="https://www.youtube.com/watch?v=jHLEy7WRXoI"> </audio>
+
+            <!-- Está correto-->
+        <h3> Formulário</h3>    
+            <div class="forms">
+                <form action="/processar_dados" method="post">
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome"><br><br>
+            
+                    <label for="email">E-mail:</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+
+                    <label for="menssagem">Menssagem:</label><br>
+                    <input type="messagem" id="menssagem" name="menssagem"><br><br>
+            
+                    <input id="submit" type="submit" value="Enviar">
+                </form>
+            </div>
+
+            <!-- Precisa colocar um link para o Google (um texto simples)
+             Link com imagem clicável
+             Link que abre em uma nova aba (target="_blank")-->
+        <h3> Links</h3> 
+            <nav> 
+                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEts0LvtJJ5PIqcuk5a_DPFhnyL8q1h14GYw&s"> Banana</a><br>
+                 <a href="https://content.paodeacucar.com/wp-content/uploads/2020/07/caqui-capa.jpg">Caqui</a>
+            </nav>
+            <!-- Melhorar a lista, colocando o passo a passo de algo-->
+        <h3> Listas</h3> 
+            <ol>
+                <li>Primeiro Item</li>
+                <li>Segundo Item</li>
+                <li>Terceiro Item</li>
+            </ol>
+            <ul>
+                <li>Item A</li>
+                <li>Item B</li>
+                <li>Item C</li>
+            </ul>
+
+        <h3> Tabela</h3> 
+            <table border="1">
+                <thead id="thead">
+                    <tr>
+                    <td> Coluna 1</td>
+                    <td> Coluna 2</td>
+                    <td> Coluna 3</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Linha 1 Coluna 1</td>
+                    <td>Linha 1 Coluna 2</td>
+                    <td>Linha 1 Coluna 3</td>
+                </tr>
+                <tr>
+                    <td>Linha 2 Coluna 1</td>
+                    <td>Linha 2 Coluna 2</td>
+                    <td>Linha 2 Coluna 3</td>
+                </tr>
+                <tr>
+                    <td>Linha 3 Coluna 1</td>
+                    <td>Linha 3 Coluna 2</td>
+                    <td>Linha 3 Coluna 3</td>
+                </tr>
+                </tbody>
+            </table>
+        <h3> Identificadores e Classes</h3>
+            <p id="introducao"> Parágrafo em HTML com ID, para direcionar a estilização corretamente</p>
+            <div class="destaque">
+                <p> Texto em HTML estilizado para a cor amarela.</p>
+                <p> Com o CSS é possível estilizar o código.</p>
+            </div>
+    </main>
+    <footer>
+        <p id="footer"> © 2025 - Atividade Aula 04</p>
+    </footer>
+</body>
+</html>
