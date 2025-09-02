@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>O bloco</title> <!--Nome que fica na aba do navegador-->
+        <style>
+            #sublinhado{
+                text-decoration: underline;
+            }
+            #riscado{
+                text-decoration: line-through;
+            }
+            #estilizado{
+                color: blue;
+                font-size: 20px;
+            }
+            .center{
+                text-align: center;
+            }
+            #justificado{
+                text-align: justify;
+            }
+            #rodape{
+                text-align: center;
+            }
+        </style> <!--CSS (Elementos Visuais)-->
+    </head>
+    <body>
+        <header>
+            <h1 align="center">Título principal (H1) - centralizado</h1>
+            <h2 align="left">Subtítulo (H2) - alinhado à esquerda</h2>
+            <h3 align="right">Seção (H3) - alinhado à direita</h3>
+            <h4>Subseção (H4)</h4>
+            <h5>Detalhe (H5)</h5>
+            <h6>Nota (H6)</h6>
+        </header> <!--Cabeçalho e títulos-->
+        
+        <nav>
+            <p>
+                <a href="https://www.rockstargames.com/">Posts</a> |
+                <a href="https://www.rockstargames.com/">Lateral</a> |
+                <a href="https://www.rockstargames.com/">Rodapé</a>
+            </p>
+        </nav> <!--Menu de Navegação-->
+        
+        <section id="posts">
+            <article class="post">
+                <header>
+                    <h2>Meu Blog - Primeiro Post</h2>
+                </header>
+                <p>
+                    Este é um parágrafo com <strong>negrito</strong>, <em>itálico</em>, <span id="sublinhado">sublinhado</span>, <span id="riscado">riscado</span>, além de exemplos de <sub>subscrito</sub> e <sup>sobrescrito</sup>.
+                </p> <!--Primeiro Parágrafos com Diferentes formatações-->
+                
+                <p>
+                    Exemplo de <span id="estilizado">texto estilizado</span> (substituindo a tag &lt;font&gt; obsoleta).
+                </p> <!--Parágrafo com Texto Estilizado-->
+                
+                <div class="center">
+                    Este texto está centralizado (substituindo &lt;center&gt;).
+                </div> <!--Texto Centralizado-->
+                
+                <p id="justificado">
+                    Parágrafo justificado para demonstrar alinhamento.</br>Esta é a linha seguinte após o &lt;/br&gt;.
+                </p> <!--Parágrafo com Quebra de Linha (Justificado)-->
+            </article>
+        </section> <!--Seção de Posts-->
+        
+        <aside id="lateral">
+            <h3>Conteúdo Relacionado</h3>
+            <p>Links, anúncios, ou notas que não fazem parte do fluxo principal do artigo.</p>
+        </aside> <!--Barra Lateral com Texto Explicativo-->
+        
+        <footer id="rodape">
+            <p>© 2025 - Exemplo didático de HTML da Aula 03</p>
+        </footer> <!--Rodapé-->
+    </body>
+</html>
