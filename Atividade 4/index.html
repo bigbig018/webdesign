@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html Lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 4</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        header, footer{
+            background-color: rgb(226, 226, 226);
+        }
+        #header{
+            font-weight: bold;
+            color: rgb(0, 54, 82);
+            font-size: large;
+        }
+        #principal .coluna-P{
+            border: 2px solid rgb(243, 243, 243);
+            border-radius: 5px;
+            background-color: white;
+            width: 960px;
+            padding: 5px;
+            vertical-align: top;
+        }
+        #secundaria{
+            border: 0.5;
+            background-color: black;
+        }
+        #secundaria th{
+            width: 132px;
+            text-align: left;
+        }
+        #Enviar{
+            height: 25px;
+            width: 60px;
+            border: 0px;
+            border-radius: 5px;
+            background-color: rgb(0, 54, 82);
+            color: white;
+        }
+        input, textarea{
+            border: 1px solid rgb(202, 202, 202);
+            border-collapse: collapse;
+            border-radius: 5px;
+        }
+
+        #introducao span{
+            background-color: rgb(190, 240, 255);
+        }
+        .destaque span{
+            background-color: rgb(255, 255, 172);
+        }
+        .coluna-P div{
+            background-color: rgb(226, 226, 226);
+            padding: 5px;
+            border-radius: 5px;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <header align="center"><span id="header">Aula 04 - Mídias em HTML</span></header>
+    <table id="principal" style="background-color: rgb(243, 243, 243);">
+        <tbody>
+            <tr>
+                <td class="coluna-P">
+                    <span id="header">Imagens</span><br>
+                    <img src="https://gameplayscassi.com.br/wp-content/uploads/2025/02/Metal-Gear-Solid-Delta-Snake-Eater-3.jpg" alt="Snake de MGS Delta" width="200"><br>
+                    <img src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/05/GTA-6.jpg" alt="GTA 6" height="100"><br>
+                    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1517290/capsule_616x353.jpg?t=1755529340" alt="Battleflied 2042" height="115">
+                </td>
+                <td class="coluna-P">
+                    <span id="header">Vídeo</span><br>
+                    <iframe src="https://www.youtube.com/embed/fKCkjkyIngU"></iframe><br>
+                    <video src="videoplayback.mp4" controls width="300"></video>
+                </td>
+                <td class="coluna-P">
+                    <span id="header">Áudio</span><br>
+                    <audio controls>
+                        <source src="Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) [TubeRipper.cc].ogg" type="audio/ogg">
+                        <source src="Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster).mp3" type="audio/mpeg">
+                        Seu navegador não suporta áudio
+                    </audio>
+                </td>
+                <td class="coluna-P">
+                    <span id="header">Formulário</span><br>
+                    <form action="processar.php" method="post">
+                        <label for="nome"><strong>Nome:</strong></label><br>
+                        <input type="text" id="nome" name="nome"><br>
+                        <label for="email"><strong>E-mail:</strong></label><br>
+                        <input type="email" id="email" name="email"><br>
+                        <label for="mensagem"><strong>Mensagem:</strong></label><br>
+                        <textarea id="mensagem" name="mensagem"></textarea><br>
+                        <input type="submit" id="Enviar" value="Enviar">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td class="coluna-P">
+                    <span id="header">Links</span><br>
+                    <a href="https://www.google.com/?hl=pt_BR&zx=1756844831913&no_sw_cr=1">Google</a><br>
+                    <a href="https://www.google.com/?hl=pt_BR&zx=1756844831913&no_sw_cr=1"><img src="https://t.ctcdn.com.br/lvns56iaSMyHvyTur4JeYS_NYeY=/i606944.png" alt="Google" width="100px"></a><br>
+                    <a href="https://www.google.com/?hl=pt_BR&zx=1756844831913&no_sw_cr=1" target="_blank">Google (abre outra página)</a>
+                </td>
+                <td class="coluna-P">
+                    <span id="header">Listas</span><br>
+                    <ol>
+                        <li>Passo 1</li>
+                        <li>Passo 2</li>
+                        <li>Passo 3</li>
+                    </ol>
+                    <ul>
+                        <li>Item A</li>
+                        <li>Item B</li>
+                        <li>Item C</li>
+                    </ul>
+                </td>
+                <td class="coluna-P">
+                    <span id="header">Tabelas</span><br>
+                    <table id="secundaria">
+                        <thead>
+                            <tr style="background-color: rgb(226, 226, 226);">
+                                <th>Coluna 1</th>
+                                <th>Coluna 2</th>
+                                <th>Coluna 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color: white;">
+                                <td>Linha 1</td>
+                                <td>Dado 1</td>
+                                <td>Dado 2</td>
+                            </tr>
+                            <tr style="background-color: white;">
+                                <td>Linha 2</td>
+                                <td>Dado 3</td>
+                                <td>Dado 4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="coluna-P">
+                    <span id="header">Identificadores e Classes</span><br>
+                    <p id="introducao"><span>Parágrafo com <strong>id</strong>.</span></p>
+                    <p class="destaque"><span>Parágrafo 1 com classe "destaque".</span></p>
+                    <p class="destaque"><span>Parágrafo 2 com classe "destaque".</span></p>
+                    <div>
+                        <h3>Div Contêiner</h3>
+                        <p>Parágrafo 1 dentro do contêiner</p>
+                        <p>Parágrafo 2 dentro do contêiner</p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer align="center">
+        © 2025 - Exemplo didático de HTML da Aula 04</p>
+    </footer> <!--Rodapé-->
+</body>
+</html>
