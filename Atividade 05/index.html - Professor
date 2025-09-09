@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculdade Exemplo</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        header, nav, main, footer {
+            padding: 20px;
+        }
+        header {
+            background: #004080;
+            color: white;
+        }
+        nav {
+            background: #0066cc;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .banner {
+            background: gray;
+            height: 200px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section {
+            margin: 20px 0;
+            background: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Faculdade Exemplo</h1>
+    <p>Transformando conhecimento em futuro</p>
+    <!-- Comentário 1 (SEO): Ausência de meta description prejudica a indexação e o CTR nos buscadores -->
+</header>
+
+<nav>
+    <a href="index.html">Início</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <!-- Comentário 2 (SEO): Links usam âncoras genéricas; textos âncora otimizados ajudam no ranqueamento -->
+</nav>
+
+<div class="banner">
+    <h2>Bem-vindo à nossa instituição</h2>
+</div>
+
+<main>
+    <section>
+        <h2>Quem Somos</h2>
+        <p>A Faculdade Exemplo é uma instituição fictícia dedicada à formação de profissionais preparados para os desafios do mercado.</p>
+        <p>Nossa missão é oferecer educação de qualidade e transformar a vida de nossos alunos.</p>
+        <!-- Comentário 3 (SEO): Conteúdo não possui palavras-chave estratégicas relacionadas a "faculdade" e "ensino superior" -->
+    </section>
+
+    <section>
+        <h2>Nossos Cursos</h2>
+        <ul>
+            <li>Administração</li>
+            <li>Ciência da Computação</li>
+            <li>Direito</li>
+            <li>Engenharia Civil</li>
+            <li>Medicina</li>
+        </ul>
+        <!-- Comentário 4 (SEO): Lista de cursos não possui links internos, reduzindo a interligação e relevância interna -->
+    </section>
+
+    <section>
+        <h2>Infraestrutura</h2>
+        <img src="campus.jpg">
+        <p>Nosso campus conta com biblioteca, laboratórios modernos e áreas de convivência.</p>
+        <p>Estamos sempre investindo em tecnologia e inovação.</p>
+        <!-- Comentário 5 (SEO): Imagem sem atributo alt não contribui para SEO em buscas por imagens -->
+    </section>
+
+    <section>
+        <h2>Corpo Docente</h2>
+        <p>Contamos com professores altamente qualificados, mestres e doutores em suas áreas.</p>
+        <p>O corpo docente é composto por profissionais atuantes no mercado e com ampla experiência acadêmica.</p>
+        <!-- Comentário 6 (SEO): Não há conteúdo rico em palavras-chave sobre especializações ou áreas de pesquisa -->
+    </section>
+
+    <section>
+        <h2>Notícias Recentes</h2>
+        <article>
+            <h3>Semana Acadêmica 2025</h3>
+            <p>A Faculdade Exemplo realizou sua tradicional Semana Acadêmica com palestras e workshops.</p>
+        </article>
+        <article>
+            <h3>Parceria Internacional</h3>
+            <p>Firmamos acordo com universidades estrangeiras para intercâmbio de alunos.</p>
+        </article>
+        <!-- Comentário 7 (SEO): Notícias não possuem marcação estruturada (Schema.org) para artigos -->
+    </section>
+
+    <section>
+        <h2>Depoimentos</h2>
+        <blockquote>
+            <p>"A Faculdade Exemplo mudou minha vida. Hoje atuo em uma grande empresa graças à formação recebida."</p>
+            <footer>- Ex-Aluno</footer>
+        </blockquote>
+        <blockquote>
+            <p>"Professores qualificados e ótima estrutura. Recomendo a todos."</p>
+            <footer>- Aluna</footer>
+        </blockquote>
+        <!-- Comentário 8 (SEO): Depoimentos não possuem dados estruturados (review schema) para melhorar destaque no Google -->
+    </section>
+
+    <section>
+        <h2>Fale Conosco</h2>
+        <form>
+            <label>Nome:</label><br>
+            <input type="text" name="nome"><br><br>
+            <label>Email:</label><br>
+            <input type="email" name="email"><br><br>
+            <textarea name="mensagem" rows="5" cols="30"></textarea><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+        <!-- Comentário 9 (SEO): Formulário não possui página de obrigado (thank you page) indexável para rastreamento de conversões -->
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Faculdade Exemplo - Todos os direitos reservados</p>
+    <p>Endereço: Rua da Educação, 123 - Cidade Exemplo</p>
+    <p>Telefone: (00) 1234-5678</p>
+    <!-- Comentário 10 (SEO): Rodapé não contém links para sitemap, política de privacidade e redes sociais otimizadas -->
+</footer>
+
+</body>
+</html>
