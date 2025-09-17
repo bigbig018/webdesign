@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculdade Exemplo</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Conheça a Facens, uma instituição de ensino superior dedicada a transformar conhecimento em futuro. Explore nossos cursos, infraestrutura e diferenciais.">
+    <meta name="faculdade" content="Conteúdos da instituição de ensino superior">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        header, nav, main, footer {
+            padding: 20px;
+        }
+        header {
+            background: #004080;
+            color: white;
+            text-align: center;
+            font-size: large;
+        }
+        nav {
+            background: #0066cc;
+        }
+        nav ul {
+            text-align: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav > ul > li {
+            display: inline;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        #cursos ul {
+            list-style: disc;
+            padding-left: 40px;
+        }
+        #cursos li {
+            margin-bottom: 10px;
+        }
+        #cursos a {
+            color: inherit;
+            text-decoration: none;
+        }
+        #cursos a:hover {
+            text-decoration: underline; 
+        }
+        #img-infraestrutura {
+            width: 750px;
+        }
+        #instagram {
+            width: 20px;
+            margin-left: 20px;
+        }
+        #linkedin {
+            width: 20px;
+            margin-left: 10px;
+        }
+        #facebook {
+            width: 20px;
+        }
+        .banner {
+            background-image: url('https://media.licdn.com/dms/image/v2/C4D1BAQGf9-MRf5UTZA/company-background_10000/company-background_10000/0/1583534442438/facens_cover?e=2147483647&v=beta&t=PrqI0PCdk35x6yT3Q-uZPX983Tyci3rvVKiLnRWNBg8');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 230px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 118px;
+        }
+        #depoimentos {
+            text-align: center;
+        }
+        #contato{
+            text-align: center;
+        }
+        section {
+            margin: 20px 0;
+            background: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+        .footer-links {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #555;
+        }
+        .footer-links a {
+            color: #ccc;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header id="head"> <!-- Cabeçalho -->
+    <h1>Facens</h1>
+    <p>Transformando conhecimento em futuro</p>
+</header>
+
+<nav aria-label="Links Principais"> <!-- Links de Navegação Principal-->
+    <ul>
+        <li><a href="#">Página Inicial</a></li>
+        <li><a href="#cursos">Nossos Cursos</a></li>
+        <li><a href="#sobre">Sobre a Faculdade</a></li>
+        <li><a href="#contato">Fale Conosco</a></li>
+    </ul>
+</nav>
+
+<div class="banner"> <!-- Banner com Imagem da Faculdade-->
+    <h2>Bem-vindo à nossa instituição</h2>
+</div>
+
+<main>
+    <section id="sobre"> <!-- Conteúdo 1, seção informativa de texto -->
+        <h2>Quem Somos</h2>
+        <p>A Facens é uma instituição de ensino superior dedicada à formação de profissionais preparados para os desafios do mercado.</p>
+        <p>Nossa missão como faculdade, é oferecer educação de qualidade e transformar a vida de nossos alunos.</p>
+    </section>
+
+    <section id="cursos">
+        <h2>Nossos Cursos</h2> <!-- Links para os demais cursos da faculdade -->
+        <ul>
+            <li><a href="/cursos/administracao" title="Saiba mais sobre o curso de Administração">Administração</a></li>
+            <li><a href="/cursos/ciencia-da-computacao" title="Saiba mais sobre o curso de Ciência da Computação">Ciência da Computação</a></li>
+            <li><a href="/cursos/direito" title="Saiba mais sobre o curso de Direito">Direito</a></li>
+            <li><a href="/cursos/engenharia-civil" title="Saiba mais sobre o curso de Engenharia Civil">Engenharia Civil</a></li>
+            <li><a href="/cursos/medicina" title="Saiba mais sobre o curso de Medicina">Medicina</a></li>
+        </ul>
+        </section>
+        
+    <section>
+        <h2>Infraestrutura</h2> <!-- Seção destinada para Imagem da Faculdade e conteúdo sobre o espaço-->
+        <img id ="img-infraestrutura" src="https://agendasorocaba.com.br/wp-content/uploads/2022/11/facens-materia-site.jpg" alt="Espaços da instituição"> <!-- Atributo Alt utilizado para melhorar Acessibilidade e SEO-->
+        <p>Nosso campus conta com biblioteca, laboratórios modernos e áreas de convivência.</p>
+        <p>Estamos sempre investindo em tecnologia e inovação.</p>
+    </section>
+
+    <section> <!-- Seção destinada a texto sobre o corpo docente da instituição-->
+        <h2>Corpo Docente</h2>
+        <p>Contamos com professores muito bem qualificados, mestres e doutores em suas áreas, com vasta experiência em pesquisa e desenvolvimento, inovação tecnológica e práticas de mercado.</p>
+        <p>Nosso corpo docente é composto por especialistas em diversas áreas do ensino superior, incluindo engenharia, tecnologia, gestão, saúde e ciências humanas e exatas, garantindo uma formação completa e atualizada aos nossos alunos.</p>
+    </section>
+
+    <section> <!-- Seção destinada a conteúdos sobre notícias, utilizando atributos Itemprops, content e matatags para melhorar o SEO da págna-->
+        <h2>Notícias Recentes</h2>
+        <article itemscope itemtype="https://schema.org/NewsArticle"> <!-- Artigo especifico de novidades, por conta do itemscope, utilizando uma URL do vocabulário schema.org-->
+            <h3 itemprop="headline">Semana Acadêmica 2025</h3>
+            <p itemprop="description">A Facens realizou sua tradicional Semana Acadêmica com palestras e workshops.</p>
+            <meta itemprop="datePublished" content="2025-09-14"> <!-- Data de publicação do Artigo-->
+            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"> <!-- Bloco especifico de organização e melhora de SEO do Artigo-->
+                <meta itemprop="name" content="Facens">
+            </div>
+        </article>
+        <article itemscope itemtype="https://schema.org/NewsArticle">
+            <h3 itemprop="headline">Parceria Internacional</h3>
+            <p itemprop="description">Firmamos acordo com universidades estrangeiras para intercâmbio de alunos.</p>
+            <meta itemprop="datePublished" content="2025-09-10"> <!-- Data de publicação do Artigo-->
+            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="Facens"> <!-- Tag meta utilizada para melhorar SEO-->
+            </div>
+        </article>
+    </section>
+
+    <section id="depoimentos"> <!-- Seção com etiquetas de cada parte do texto, para melhorar SEO da página -->
+        <h2>Depoimentos</h2>
+        <blockquote itemprop="review" itemscope itemtype="https://schema.org/Review"> <!-- Schema.org Agrega significado Semântico para os motores de busca-->
+            <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="Facens">
+            </div>
+            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                <meta itemprop="ratingValue" content="5">
+                <meta itemprop="bestRating" content="5">
+            </div>
+            <p itemprop="reviewBody">"A Facens mudou minha vida. Hoje atuo em uma grande empresa graças à formação recebida."</p>
+            <footer>- <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Pedro Oliveira, Engenharia de Software (Turma de 2022)</span></span></footer>
+        </blockquote>
+        <blockquote itemprop="review" itemscope itemtype="https://schema.org/Review"> <!-- Schema.org Agrega significado Semântico para os motores de busca-->
+            <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="Facens">
+            </div>
+            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                <meta itemprop="ratingValue" content="5">
+                <meta itemprop="bestRating" content="5">
+            </div>
+            <p itemprop="reviewBody">"Professores qualificados e ótima estrutura. Recomendo a todos."</p>
+            <footer>- <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Arthur Angeli, Aluno do 2º Semestre de Engenharia da Computação</span></span></footer>
+        </blockquote>
+    </section>
+    <section id="contato"> <!-- Seção de formulário-->
+        <h2>Fale Conosco</h2>
+        <form action="/obrigado.html" method="POST"> 
+            <label>Nome:</label><br>
+            <input type="text" name="nome"><br><br>
+            <label>Email:</label><br>
+            <input type="email" name="email"><br><br>
+            <textarea name="mensagem" rows="5" cols="30"></textarea><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</main>
+
+<footer> <!-- Rodapé-->
+    <p>&copy; 2025 Facens - Todos os direitos reservados</p> <!-- Parágrafo com informações-->
+    <p>Rodovia Senador José Ermírio de Moraes, 1425 <br>
+        Castelinho km 1,5 – Alto da Boa Vista <br>
+        Sorocaba/SP – CEP 18087-125</p>
+    <p>Telefone: (15) 3238 1188</p>
+    
+    <div class="footer-links"> <!-- Bloco dos links do Rodapé-->
+        <a href="/politica-de-privacidade.html" title="Leia nossa Política de Privacidade">Política de Privacidade</a>
+        <a href="/sitemap.html" title="Veja o mapa do nosso site">Mapa do Site</a>
+        <br><br>
+        <span>Siga-nos:</span> <!-- Link e logo das Redes Sociais da Instituição-->
+        <img id="instagram" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="instagram- icone">
+        <a href="https://www.instagram.com/instafacens" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Facens">Instagram</a>
+        <img id="facebook" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="Facebook- icone">
+        <a href="https://www.facebook.com/facens" target="_blank" rel="noopener noreferrer" aria-label="Facebook da Facens">Facebook</a>
+        <img id="linkedin" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png" alt="LinkedIn- icone">
+        <a href="https://www.linkedin.com/school/centro-universitario-facens" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Facens">LinkedIn</a>
+    </div>
+</footer>
+
+</body>
+</html>
