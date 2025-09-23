@@ -16,6 +16,9 @@
             padding: 20px; 
             text-align: center; 
         }
+        #logo{
+            position: relative;
+        }
         .nav a { 
             margin: 0 15px; 
             text-decoration: none; 
@@ -54,9 +57,6 @@
             height: auto;
             border-radius: 8px;
         }
-
-        /* --- INÍCIO DAS ALTERAÇÕES APENAS NO FOOTER --- */
-
         .footer { 
             background-color: #282828; 
             color: #fff; 
@@ -65,7 +65,7 @@
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 30px;
-            text-align: left; /* Alterado de 'center' para 'left' para as colunas */
+            text-align: left;
         }
 
         .footer-column {
@@ -120,13 +120,13 @@
             width: 135px;
             margin-bottom: 15px;
         }
-        /* --- FIM DAS ALTERAÇÕES NO CSS DO FOOTER --- */
 
     </style>
 </head>
 <body>
 
     <header class="header">
+        <img id="logo" src="" alt="website-logo">
         <nav class="nav">
             <a href="#">Sobre nós</a>
             <a href="#">Novidades</a>
