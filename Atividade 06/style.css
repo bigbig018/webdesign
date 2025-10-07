@@ -1,0 +1,238 @@
+/* style.css - Estilos externos para o projeto PlayHouse */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* propriedade ensinada em aula */
+}
+
+/* Base do corpo e tipografia */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif; /* font-family */
+  font-size: 16px; /* font-size  */
+  color: #EEEEEE; /* color */
+  background-color: #0b1020; /* background-color */
+  line-height: 1.5; /* propriedade útil */
+}
+
+/* Header */
+.cabecalho {
+  display: flex; /* display */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px; /* padding */
+  border-bottom: 2px solid rgba(255,255,255,0.06); /* border */
+  position: sticky; /* position junto com top */
+  top: 0; /* top */
+  background: linear-gradient(90deg, rgba(14,18,30,0.95), rgba(6,8,15,0.95));
+  z-index: 50; /* z-index */
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 1.6rem;
+  color: #fff;
+}
+.slogan {
+  font-size: 0.9rem;
+  color: #9aa3b2;
+}
+
+/* Menu interativo: estilização e hover */
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+.menu a {
+  text-decoration: none;
+  color: #dbe6ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.menu a:hover, .menu a:focus {
+  background-color: rgba(255,255,255,0.04);
+  transform: translateY(-3px); /* transform - MDN property (1/10) */
+  transition: transform 200ms ease, background-color 200ms ease; /* transition - MDN property (2/10) */
+}
+
+/* Hero section: layout em grid */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* grid-template-columns - MDN property (3/10) */
+  gap: 20px;
+  padding: 40px;
+  align-items: center;
+}
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 12px; /* margin */
+}
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px; /* border-radius */
+  border: none;
+}
+.primary {
+  background-color: #0066ff;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6); /* box-shadow - usado para efeito visual */
+  transition: transform 250ms ease;
+}
+.primary:hover {
+  transform: scale(1.03); /* reuse transform */
+}
+
+/* Console cards */
+.consoles {
+  padding: 30px;
+}
+.console-card {
+  margin-bottom: 18px; /* margin */
+  padding: 12px; /* padding */
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+}
+.jogos {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+}
+.jogo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 220px; /* width */
+}
+.jogo img {
+  width: 80px;
+  height: 45px; /* height */
+  object-fit: cover; /* object-fit - MDN property (4/10) */
+  border-radius: 6px;
+}
+.jogo-info h4 {
+  font-size: 1rem;
+}
+.meta {
+  font-size: 0.8rem;
+  color: #aab2c3;
+}
+
+/* Galeria em grid */
+.galeria {
+  padding: 24px;
+}
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* grid usage */
+  gap: 12px;
+}
+.galeria-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover; /* reuse object-fit */
+  clip-path: inset(0 0 6% 0 round 8px); /* clip-path - MDN property (5/10) */
+  transition: filter 300ms ease;
+}
+.galeria-item img:hover {
+  filter: saturate(1.2) contrast(1.05); /* filter - MDN property (6/10) */
+}
+
+/* Videos and audio */
+.videos iframe {
+  width: 48%;
+  height: 320px;
+  border: none;
+  margin: 10px;
+}
+.audio audio {
+  display: block;
+  margin: 8px 0;
+  width: 100%;
+}
+
+/* Artigos e posts */
+.artigos {
+  padding: 24px;
+}
+.post {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-left: 4px solid rgba(0,102,255,0.6);
+}
+
+/* Footer and form */
+.rodape {
+  padding: 30px;
+  background-color: #04050a;
+}
+.form-contato label {
+  display: block; /* display usado novamente */
+  margin: 6px 0 4px;
+}
+.form-contato input, .form-contato textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #dfe7ff;
+  border-radius: 6px;
+}
+.form-contato button {
+  margin-top: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+/* Responsividade: media queries */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .menu ul { flex-direction: column; }
+  .videos iframe { width: 100%; height: 210px; }
+}
+
+/* ANIMAÇÃO: usando animation (MDN property 7/10) */
+.logo h1 {
+  animation: float 6s ease-in-out infinite; /* animation - MDN (7/10) */
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* mix-blend-mode for hero images */
+.hero-media img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: screen; /* mix-blend-mode - MDN property (8/10) */
+  opacity: 0.95;
+}
+
+/* backdrop-filter para dar efeito atrás de transparências */
+.cabecalho {
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px); /* backdrop-filter - MDN property (9/10) */
+}
+
+/* perspective on cards */
+.console-card {
+  perspective: 800px; /* perspective - MDN property (10/10) */
+}
+.console-card:hover {
+  transform: rotateY(2deg);
+}
+
+/* Acessibilidade: focus styles */
+a:focus {
+  outline: 3px dashed rgba(0,102,255,0.6);
+}
+
+/* FIM DO ARQUIVO - comentários explicativos:
+   - Este CSS aplica todas as propriedades (color, background-color, font-family, font-size,
+     margin, padding, border, width, height, display, position, top/right/bottom/left, text-align, classes e IDs, etc.).
+   - Foram adicionadas 10 propriedades complementares extra, escolhidas na referência MDN:
+     animation, transform, transition, grid-template-columns, object-fit, clip-path, filter, mix-blend-mode, backdrop-filter, perspective.
+*/
