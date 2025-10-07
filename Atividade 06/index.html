@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Games: Sétima Geração — Projeto CSS</title>
+  <!-- Link para CSS externo -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Comentários: este arquivo HTML contém seções que demonstram propriedades CSS e 10 propriedades extras selecionadas do MDN. -->
+</head>
+<body>
+  <!-- CABEÇALHO PRINCIPAL -->
+  <header id="topo" class="cabecalho">
+    <div class="logo" id="logo">
+      <!-- Logo textual -->
+      <h1>PlayHouse — Jogos (Sétima Geração em diante)</h1>
+      <p class="slogan">Xbox, PlayStation e PC</p>
+    </div>
+    <!-- Menu interativo usando nav e links -->
+    <nav class="menu">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#consoles">Consoles</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#artigos">Artigos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO: seção de destaque -->
+  <section id="hero" class="hero">
+    <div class="hero-text">
+      <h2>Bem-vindo ao museu dos grandes títulos — Sétima Geração</h2>
+      <p>Este site demonstra o uso de propriedades CSS e 10 propriedades extras selecionadas do MDN.
+      </p>
+      <a href="#consoles" class="btn primary">Explorar Consoles</a>
+    </div>
+  </section>
+
+  <!-- CONSOLES E JOGOS -->
+  <section id="consoles" class="consoles">
+    <h2>Consoles e títulos notáveis (Sétima Geração em diante)</h2>
+
+    <!-- Xbox 360 / Xbox One / Series -->
+    <article class="console-card">
+      <h3>Xbox 360 / Xbox One / Series</h3>
+      <ul class="jogos">
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Halo 3</h4>
+            <p>Plataformas: Xbox</p>
+            <p class="meta">Gênero: Ação / FPS</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Gears of War 3</h4>
+            <p>Plataformas: Xbox.</p>
+            <p class="meta">Gênero: Ação / TPS</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Forza Horizon 4</h4>
+            <p>Plataformas: Xbox, PC.</p>
+            <p class="meta">Gênero: Corrida</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Halo Infinite</h4>
+            <p>Plataformas: Xbox, PC.</p>
+            <p class="meta">Gênero: FPS</p>
+          </div>
+        </li>
+      </ul>
+    </article>
+
+    <!-- PlayStation 3 / PS4 / PS5 -->
+    <article class="console-card">
+      <h3>PlayStation 3 / PS4 / PS5</h3>
+      <ul class="jogos">
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Uncharted 2</h4>
+            <p>Plataformas: PlayStation.</p>
+            <p class="meta">Gênero: Ação / Aventura</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>The Last of Us</h4>
+            <p>Plataformas: PlayStation, PC.</p>
+            <p class="meta">Gênero: Ação / Aventura</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>God of War (2018)</h4>
+            <p>Plataformas: PlayStation, PC.</p>
+            <p class="meta">Gênero: Ação</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Spider-Man (2018)</h4>
+            <p>Plataformas: PlayStation, PC.</p>
+            <p class="meta">Gênero: Ação / Super-Herói</p>
+          </div>
+        </li>
+      </ul>
+    </article>
+
+    <!-- PC (Multiplataforma) -->
+    <article class="console-card">
+      <h3>PC (Multiplataforma)</h3>
+      <ul class="jogos">
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Grand Theft Auto V</h4>
+            <p>Plataformas: Console, PC.</p>
+            <p class="meta">Gênero: Mundo aberto</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>The Witcher 3</h4>
+            <p>Plataformas: PC, Console.</p>
+            <p class="meta">Gênero: RPG</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Red Dead Redemption 2</h4>
+            <p>Plataformas: Console, PC.</p>
+            <p class="meta">Gênero: Aventura / Mundo aberto</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Cyberpunk 2077</h4>
+            <p>Plataformas: Console, PC.</p>
+            <p class="meta">Gênero: RPG / Ação</p>
+          </div>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Xbox One / Series (adicionais) -->
+    <article class="console-card">
+      <h3>Xbox One / Series (adicionais)</h3>
+      <ul class="jogos">
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Gears 5</h4>
+            <p>Plataformas: Xbox, PC.</p>
+            <p class="meta">Gênero: TPS</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Forza Horizon 5</h4>
+            <p>Plataformas: Xbox, PC.</p>
+            <p class="meta">Gênero: Corrida</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Ori and the Will of the Wisps</h4>
+            <p>Plataformas: Xbox, PC.</p>
+            <p class="meta">Gênero: Plataforma</p>
+          </div>
+        </li>
+      </ul>
+    </article>
+
+    <!-- PlayStation 4 / 5 (adicionais) -->
+    <article class="console-card">
+      <h3>PlayStation 4 / 5 (adicionais)</h3>
+      <ul class="jogos">
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Bloodborne</h4>
+            <p>Plataformas: PlayStation.</p>
+            <p class="meta">Gênero: Ação / RPG</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Horizon Zero Dawn</h4>
+            <p>Plataformas: PlayStation, PC.</p>
+            <p class="meta">Gênero: Ação / RPG</p>
+          </div>
+        </li>
+        <li class="jogo">
+          <div class="jogo-info">
+            <h4>Demon's Souls (PS5)</h4>
+            <p>Plataformas: PlayStation.</p>
+            <p class="meta">Gênero: Ação / RPG</p>
+          </div>
+        </li>
+      </ul>
+    </article>
+
+  </section>
+
+  <!-- GALERIA: muitas mídias (imagens) -->
+  <section id="galeria" class="galeria">
+    <h2>Galeria de screenshots e artes</h2>
+    <div class="grid-galeria">
+      <figure class="galeria-item">
+        <img src="https://cdn.awsli.com.br/600x450/138/138431/produto/10707169/a3100c4c28.jpg" alt="Galeria 1">
+        <figcaption>Imagem 1 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://m.media-amazon.com/images/I/71wy0G6PM8L.jpg" alt="Galeria 2">
+        <figcaption>Imagem 2 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://m.media-amazon.com/images/I/71SAXd-+-FL._UF1000,1000_QL80_.jpg" alt="Galeria 3">
+        <figcaption>Imagem 3 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/d/d1/Halo_Infinite_capa.png" alt="Galeria 4">
+        <figcaption>Imagem 4 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/1/10/Uncharted_2_capa.png" alt="Galeria 5">
+        <figcaption>Imagem 5 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/b/be/The_Last_of_Us_capa.png" alt="Galeria 6">
+        <figcaption>Imagem 6 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://www.vgdb.com.br/gf/fotos/games/media_18709/god-of-war-2018-18709.jpg" alt="Galeria 7">
+        <figcaption>Imagem 7 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202011/0402/AcjaXqwZzggGiKLFdEfHMp0H.png" alt="Galeria 8">
+        <figcaption>Imagem 8 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png" alt="Galeria 9">
+        <figcaption>Imagem 9 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png" alt="Galeria 10">
+        <figcaption>Imagem 10 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png" alt="Galeria 11">
+        <figcaption>Imagem 11 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/f/f7/Cyberpunk_2077_capa.png/330px-Cyberpunk_2077_capa.png" alt="Galeria 12">
+        <figcaption>Imagem 12 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/9/96/Gears_5_capa.jpeg" alt="Galeria 13">
+        <figcaption>Imagem 13 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202502/1900/631436cfbc1d64659c778e3783f29fafad6022145e0ffec8.jpg" alt="Galeria 14">
+        <figcaption>Imagem 14 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/9/94/Ori_and_the_Will_of_the_Wisps.jpg/270px-Ori_and_the_Will_of_the_Wisps.jpg" alt="Galeria 15">
+        <figcaption>Imagem 15 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://image.api.playstation.com/vulcan/img/rnd/202010/2614/NVmnBXze9ElHzU6SmykrJLIV.png" alt="Galeria 16">
+        <figcaption>Imagem 16 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202409/2716/16b33fa9a5c7285ba86a035b4a1c5f8eb430b407eae35ffd.png" alt="Galeria 17">
+        <figcaption>Imagem 17 — screenshot/art</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="https://image.api.playstation.com/vulcan/img/rnd/202011/1717/GemRaOZaCMhGxQ9dRhnQQyT5.png" alt="Galeria 18">
+        <figcaption>Imagem 18 — screenshot/art</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- VÍDEOS: vídeos de trailers (embed YouTube) -->
+  <section id="videos" class="videos">
+    <h2>Trailers</h2>
+    <div class="video-grid">
+      <!-- links de exemplo (placeholders) -->
+      <iframe src="https://www.youtube.com/embed/QkkoHAzjnUs" title="Trailer 1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/gmA6MrX81z4" title="Trailer 2" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ÁUDIO: temas e efeitos -->
+  <section id="audio" class="audio">
+    <h2>Temas sonoros — exemplos</h2>
+    <p>Dois exemplos de áudio (placeholder):</p>
+    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio>
+  </section>
+
+  <!-- ARTIGOS/CONTEÚDO -->
+  <section id="artigos" class="artigos">
+    <h2>Artigos</h2>
+    <article class="post">
+      <h3>Artigo 1: Evolução dos gráficos (Geração 7 -> 9)</h3>
+      <p>Resumo: Neste artigo discutimos como as engines e hardware evoluíram entre a sétima geração e as atuais.</p>
+      <p class="leia-mais"><a href="#hero">Voltar ao topo</a></p>
+    </article>
+    <article class="post">
+      <h3>Artigo 2: IA e comportamento de NPCs</h3>
+      <p>Resumo: Impacto da IA no design de jogos modernos.</p>
+      <p class="leia-mais"><a href="#hero">Voltar ao topo</a></p>
+    </article>
+    <article class="post">
+      <h3>Artigo 3: Física nos jogos — do arcade ao realismo</h3>
+      <p>Resumo: Simulação de física em jogos modernos.</p>
+      <p class="leia-mais"><a href="#hero">Voltar ao topo</a></p>
+    </article>
+    <article class="post">
+      <h3>Artigo 4: Trilha sonora e design sonoro</h3>
+      <p>Resumo: Como o som fortalece a narrativa.</p>
+      <p class="leia-mais"><a href="#hero">Voltar ao topo</a></p>
+    </article>
+    <article class="post">
+      <h3>Artigo 5: Multiplayer e infraestrutura</h3>
+      <p>Resumo: Redes e latência em multiplayer.</p>
+      <p class="leia-mais"><a href="#hero">Voltar ao topo</a></p>
+    </article>
+  </section>
+
+  <!-- RODAPÉ E FORMULÁRIO DE CONTATO -->
+  <footer id="contato" class="rodape">
+    <h2>Contato</h2>
+    <form class="form-contato" action="#" method="post">
+      <!-- nome e email -->
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="seu@exemplo.com">
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+    <br>
+    <p class="credits" align="center">
+        © 2025 - Exemplo didático de HTML da Aula 06
+    </p>
+  </footer>
+
+</body>
+</html>
