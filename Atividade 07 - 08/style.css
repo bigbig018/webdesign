@@ -103,6 +103,11 @@ a:hover {
     justify-content: center;
     gap: var(--spacing-md);
 }
+.main-nav li + li {
+    /* Selects every list item that comes after another one */
+    border-left: 2px solid var(--clr-accent);
+    padding-left: var(--spacing-md);
+}
 .main-nav a {
     color: var(--clr-text-light);
     font-weight: bold;
@@ -120,7 +125,7 @@ a:hover {
     max-height: 600px;
     height: 60vh;
     background-image: url('https://wallpapercave.com/wp/wp8531337.jpg');
-    background-size:c;
+    background-size:cover;
     background-position: center;
     display: flex;
     justify-content: center;
@@ -174,13 +179,63 @@ a:hover {
     flex: 1;
     min-width: 300px;
 }
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.55);
 }
 
 /* ---------------------------------- */
-/* 5. FOOTER                          */
+/* 5. PAGE INDEX                      */
+/* ---------------------------------- */
+
+#index{
+    /* fix this later, or add properties for an "#index" and adjacent inside */
+    /* "@media (max-width:768px)" for smaller screens                        */
+    width:400px;
+    height:400px;
+    padding:20px;
+    border:20px var(--clr-accent) solid;
+    border-radius:35px;
+
+    /*aligning .card-grid within index*/
+    display:flex;
+    justify-content: center;
+}
+
+#index .card-grid{
+    width:270px;
+    height:270px;
+    gap:var(--spacing-md);
+
+    /*aligning .cards within card grid*/
+    align-items:center;
+    justify-content: center;
+}
+
+#index .card {
+    /*overriding a few .card properties*/
+    flex:none;
+    min-width:50px;
+    width:50px;
+    height:50px;
+
+    /*aligning icons within cards*/
+    display:flex;
+    padding:0;
+    align-items:center;
+    justify-content: center;
+
+}
+
+.tipo-imagem-index {
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+}
+
+/* ---------------------------------- */
+/* 6. FOOTER                          */
 /* ---------------------------------- */
 
 .main-footer {
@@ -190,7 +245,9 @@ a:hover {
     padding: 1.5rem 0;
 }
 
-/* --- ESTILOS DO CARROSSEL (SUBSTITUEM OS ESTILOS DA GRADE ANTERIOR) --- */
+/* -------------------------------------------------------------------- */
+/* 7. ESTILOS DO CARROSSEL (SUBSTITUEM OS ESTILOS DA GRADE ANTERIOR)    */
+/* -------------------------------------------------------------------- */
 
 .tipos-section { 
     padding: 60px 0; /* Ajustado o padding */
@@ -208,7 +265,8 @@ a:hover {
     position: relative;
     max-width: 1400px;
     margin: 0 auto;
-    overflow: hidden; 
+    overflow: hidden;
+    padding:10px 0;
 }
 
 /* O container que segura e move os cards */
