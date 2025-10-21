@@ -1,0 +1,606 @@
+
+/*
+  style.css — Aurora Studios
+  Propósito: estilos globais e tokens de design usados nas páginas do site (tema claro/escuro,
+  layout, componentes básicos, grid de galeria, utilitários). Comentários adicionados para
+  documentar seções importantes sem alterar a lógica visual existente.
+
+  Notas:
+  - Variáveis CSS definidas em :root servem como design tokens (cores, espaçamentos, sombras).
+  - A seção de utilitários abaixo contém muitas classes de espaçamento/badges geradas; mantive-as
+    intactas e apenas documentei sua intenção.
+*/
+:root{
+  --space-xxs:4px; --space-xs:8px; --space-s:12px; --space-m:18px; --space-l:28px; --space-xl:48px;
+  --max-width:1200px;
+  --radius:12px;
+  --shadow-1: 0 6px 20px rgba(10,12,20,0.06);
+  --shadow-2: 0 12px 36px rgba(10,12,20,0.08);
+  /* nova paleta */
+  --bg: #fafbfc;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --text: #0b1220;
+  --accent: #0f4c57; /* azul petróleo */
+  --accent-2: #d98a48; /* laranja queimado */
+  --soft: #eef3f4;
+}
+/* Body background set to palette color (solid) to avoid visual line breaks) */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.theme-dark{
+  --bg:#071620; --surface:#071826; --muted:#9aa4b2; --text:#e6eef5; --accent:#0f6b74; --accent-2:#ff8f5a;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--text); line-height:1.5}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-m)}
+
+.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));backdrop-filter:blur(6px);z-index:100;border-bottom:1px solid rgba(11,18,32,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{font-weight:700;color:var(--accent);text-decoration:none}
+.brand span{color:var(--accent-2);font-weight:600}
+
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+.nav-list a{padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--muted)}
+.nav-list a.active, .nav-list a:hover{color:var(--text);background:linear-gradient(90deg, rgba(15,76,87,0.06), rgba(217,138,72,0.03))}
+
+.hero{padding:56px 0}
+.hero h1{font-size:40px;margin:0 0 12px;color:var(--accent)}
+.lead{color:var(--muted);max-width:60ch}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;border:0;cursor:pointer;text-decoration:none}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;font-weight:600;box-shadow:var(--shadow-1)}
+.btn-outline{background:transparent;border:1px solid rgba(11,18,32,0.04);color:var(--text)}
+
+.grid{display:grid;gap:18px}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--surface);padding:18px;border-radius:12px;box-shadow:var(--shadow-1)}
+
+.testimonial{padding:18px;border-left:4px solid var(--accent)}
+
+.site-footer{padding:28px 0;background:transparent;border-top:1px solid rgba(11,18,32,0.03)}
+
+/* Forms — contêiner e campos
+  - O formulário tem largura máxima e usa tokens de superfície e sombra.
+  - Campos usam borda sutil e raio para consistência com o sistema de design. */
+form{max-width:720px;background:var(--surface);padding:18px;border-radius:12px;box-shadow:var(--shadow-1)}
+.form-row{display:flex;flex-direction:column;margin-bottom:12px}
+input,textarea,select{padding:12px;border-radius:8px;border:1px solid rgba(11,18,32,0.06)}
+
+.masonry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery-item img{width:100%;height:auto;border-radius:10px}
+
+.reveal{opacity:0;transform:translateY(8px);transition:opacity .45s ease, transform .45s ease}
+.reveal.is-visible{opacity:1;transform:none}
+/* A classe .reveal é usada em conjunto com IntersectionObserver (inicializado em script.js)
+  para animar elementos ao entrarem na viewport. */
+
+/* Responsive — breakpoints principais
+  - 980px: reduz colunas da galeria para 2
+  - 640px: layout móvel (oculta nav-list, mostra botão de toggle, colunas empilhadas)
+*/
+@media (max-width:980px){ .masonry-grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .nav-list{display:none} .nav-toggle{display:inline-block} .masonry-grid{grid-template-columns:1fr} .cols-3{grid-template-columns:1fr} }
+
+
+.utilities-comment {
+  /* Utilities and extended helpers (functional)
+     - Muitas classes auxiliares de espaçamento e badges estão listadas abaixo.
+     - Essas classes servem para prototipagem rápida e composição utilitária; podem ser
+       geradas/compactadas em um build futuro para reduzir tamanho. */
+  --utilities-note: 'utilidades-documentacao';
+}
+.utilities { --utility: 1; }
+.u-gap-1 { gap: 1px; }
+.u-gap-2 { gap: 2px; }
+.u-gap-3 { gap: 3px; }
+.u-gap-4 { gap: 4px; }
+.u-gap-5 { gap: 5px; }
+.u-gap-6 { gap: 6px; }
+.u-gap-7 { gap: 7px; }
+.badge-7 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-8 { gap: 8px; }
+.u-gap-9 { gap: 9px; }
+.u-gap-10 { gap: 10px; }
+.u-gap-11 { gap: 11px; }
+.u-gap-12 { gap: 12px; }
+.u-gap-13 { gap: 13px; }
+.u-gap-14 { gap: 14px; }
+.badge-14 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-15 { gap: 15px; }
+.u-gap-16 { gap: 16px; }
+.u-gap-17 { gap: 17px; }
+.u-gap-18 { gap: 18px; }
+.u-gap-19 { gap: 19px; }
+.u-gap-20 { gap: 20px; }
+.u-gap-21 { gap: 21px; }
+.badge-21 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-22 { gap: 22px; }
+.u-gap-23 { gap: 23px; }
+.u-gap-24 { gap: 24px; }
+.u-gap-25 { gap: 25px; }
+.u-gap-26 { gap: 26px; }
+.u-gap-27 { gap: 27px; }
+.u-gap-28 { gap: 28px; }
+.badge-28 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-29 { gap: 29px; }
+.u-gap-30 { gap: 30px; }
+.u-gap-31 { gap: 31px; }
+.u-gap-32 { gap: 32px; }
+.u-gap-33 { gap: 33px; }
+.u-gap-34 { gap: 34px; }
+.u-gap-35 { gap: 35px; }
+.badge-35 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-36 { gap: 36px; }
+.u-gap-37 { gap: 37px; }
+.u-gap-38 { gap: 38px; }
+.u-gap-39 { gap: 39px; }
+.u-gap-40 { gap: 40px; }
+.u-gap-41 { gap: 41px; }
+.u-gap-42 { gap: 42px; }
+.badge-42 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-43 { gap: 43px; }
+.u-gap-44 { gap: 44px; }
+.u-gap-45 { gap: 45px; }
+.u-gap-46 { gap: 46px; }
+.u-gap-47 { gap: 47px; }
+.u-gap-48 { gap: 48px; }
+.u-gap-49 { gap: 49px; }
+.badge-49 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-50 { gap: 50px; }
+.u-gap-51 { gap: 51px; }
+.u-gap-52 { gap: 52px; }
+.u-gap-53 { gap: 53px; }
+.u-gap-54 { gap: 54px; }
+.u-gap-55 { gap: 55px; }
+.u-gap-56 { gap: 56px; }
+.badge-56 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-57 { gap: 57px; }
+.u-gap-58 { gap: 58px; }
+.u-gap-59 { gap: 59px; }
+.u-gap-60 { gap: 60px; }
+.u-gap-61 { gap: 61px; }
+.u-gap-62 { gap: 62px; }
+.u-gap-63 { gap: 63px; }
+.badge-63 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-64 { gap: 64px; }
+.u-gap-65 { gap: 65px; }
+.u-gap-66 { gap: 66px; }
+.u-gap-67 { gap: 67px; }
+.u-gap-68 { gap: 68px; }
+.u-gap-69 { gap: 69px; }
+.u-gap-70 { gap: 70px; }
+.badge-70 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-71 { gap: 71px; }
+.u-gap-72 { gap: 72px; }
+.u-gap-73 { gap: 73px; }
+.u-gap-74 { gap: 74px; }
+.u-gap-75 { gap: 75px; }
+.u-gap-76 { gap: 76px; }
+.u-gap-77 { gap: 77px; }
+.badge-77 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-78 { gap: 78px; }
+.u-gap-79 { gap: 79px; }
+.u-gap-80 { gap: 80px; }
+.u-gap-81 { gap: 81px; }
+.u-gap-82 { gap: 82px; }
+.u-gap-83 { gap: 83px; }
+.u-gap-84 { gap: 84px; }
+.badge-84 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-85 { gap: 85px; }
+.u-gap-86 { gap: 86px; }
+.u-gap-87 { gap: 87px; }
+.u-gap-88 { gap: 88px; }
+.u-gap-89 { gap: 89px; }
+.u-gap-90 { gap: 90px; }
+.u-gap-91 { gap: 91px; }
+.badge-91 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-92 { gap: 92px; }
+.u-gap-93 { gap: 93px; }
+.u-gap-94 { gap: 94px; }
+.u-gap-95 { gap: 95px; }
+.u-gap-96 { gap: 96px; }
+.u-gap-97 { gap: 97px; }
+.u-gap-98 { gap: 98px; }
+.badge-98 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-99 { gap: 99px; }
+.u-gap-100 { gap: 100px; }
+.u-gap-101 { gap: 101px; }
+.u-gap-102 { gap: 102px; }
+.u-gap-103 { gap: 103px; }
+.u-gap-104 { gap: 104px; }
+.u-gap-105 { gap: 105px; }
+.badge-105 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-106 { gap: 106px; }
+.u-gap-107 { gap: 107px; }
+.u-gap-108 { gap: 108px; }
+.u-gap-109 { gap: 109px; }
+.u-gap-110 { gap: 110px; }
+.u-gap-111 { gap: 111px; }
+.u-gap-112 { gap: 112px; }
+.badge-112 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-113 { gap: 113px; }
+.u-gap-114 { gap: 114px; }
+.u-gap-115 { gap: 115px; }
+.u-gap-116 { gap: 116px; }
+.u-gap-117 { gap: 117px; }
+.u-gap-118 { gap: 118px; }
+.u-gap-119 { gap: 119px; }
+.badge-119 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-120 { gap: 120px; }
+.u-gap-121 { gap: 121px; }
+.u-gap-122 { gap: 122px; }
+.u-gap-123 { gap: 123px; }
+.u-gap-124 { gap: 124px; }
+.u-gap-125 { gap: 125px; }
+.u-gap-126 { gap: 126px; }
+.badge-126 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-127 { gap: 127px; }
+.u-gap-128 { gap: 128px; }
+.u-gap-129 { gap: 129px; }
+.u-gap-130 { gap: 130px; }
+.u-gap-131 { gap: 131px; }
+.u-gap-132 { gap: 132px; }
+.u-gap-133 { gap: 133px; }
+.badge-133 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-134 { gap: 134px; }
+.u-gap-135 { gap: 135px; }
+.u-gap-136 { gap: 136px; }
+.u-gap-137 { gap: 137px; }
+.u-gap-138 { gap: 138px; }
+.u-gap-139 { gap: 139px; }
+.u-gap-140 { gap: 140px; }
+.badge-140 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-141 { gap: 141px; }
+.u-gap-142 { gap: 142px; }
+.u-gap-143 { gap: 143px; }
+.u-gap-144 { gap: 144px; }
+.u-gap-145 { gap: 145px; }
+.u-gap-146 { gap: 146px; }
+.u-gap-147 { gap: 147px; }
+.badge-147 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-148 { gap: 148px; }
+.u-gap-149 { gap: 149px; }
+.u-gap-150 { gap: 150px; }
+.u-gap-151 { gap: 151px; }
+.u-gap-152 { gap: 152px; }
+.u-gap-153 { gap: 153px; }
+.u-gap-154 { gap: 154px; }
+.badge-154 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-155 { gap: 155px; }
+.u-gap-156 { gap: 156px; }
+.u-gap-157 { gap: 157px; }
+.u-gap-158 { gap: 158px; }
+.u-gap-159 { gap: 159px; }
+.u-gap-160 { gap: 160px; }
+.u-gap-161 { gap: 161px; }
+.badge-161 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-162 { gap: 162px; }
+.u-gap-163 { gap: 163px; }
+.u-gap-164 { gap: 164px; }
+.u-gap-165 { gap: 165px; }
+.u-gap-166 { gap: 166px; }
+.u-gap-167 { gap: 167px; }
+.u-gap-168 { gap: 168px; }
+.badge-168 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-169 { gap: 169px; }
+.u-gap-170 { gap: 170px; }
+.u-gap-171 { gap: 171px; }
+.u-gap-172 { gap: 172px; }
+.u-gap-173 { gap: 173px; }
+.u-gap-174 { gap: 174px; }
+.u-gap-175 { gap: 175px; }
+.badge-175 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-176 { gap: 176px; }
+.u-gap-177 { gap: 177px; }
+.u-gap-178 { gap: 178px; }
+.u-gap-179 { gap: 179px; }
+.u-gap-180 { gap: 180px; }
+.u-gap-181 { gap: 181px; }
+.u-gap-182 { gap: 182px; }
+.badge-182 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-183 { gap: 183px; }
+.u-gap-184 { gap: 184px; }
+.u-gap-185 { gap: 185px; }
+.u-gap-186 { gap: 186px; }
+.u-gap-187 { gap: 187px; }
+.u-gap-188 { gap: 188px; }
+.u-gap-189 { gap: 189px; }
+.badge-189 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-190 { gap: 190px; }
+.u-gap-191 { gap: 191px; }
+.u-gap-192 { gap: 192px; }
+.u-gap-193 { gap: 193px; }
+.u-gap-194 { gap: 194px; }
+.u-gap-195 { gap: 195px; }
+.u-gap-196 { gap: 196px; }
+.badge-196 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-197 { gap: 197px; }
+.u-gap-198 { gap: 198px; }
+.u-gap-199 { gap: 199px; }
+.u-gap-200 { gap: 200px; }
+.u-gap-201 { gap: 201px; }
+.u-gap-202 { gap: 202px; }
+.u-gap-203 { gap: 203px; }
+.badge-203 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-204 { gap: 204px; }
+.u-gap-205 { gap: 205px; }
+.u-gap-206 { gap: 206px; }
+.u-gap-207 { gap: 207px; }
+.u-gap-208 { gap: 208px; }
+.u-gap-209 { gap: 209px; }
+.u-gap-210 { gap: 210px; }
+.badge-210 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-211 { gap: 211px; }
+.u-gap-212 { gap: 212px; }
+.u-gap-213 { gap: 213px; }
+.u-gap-214 { gap: 214px; }
+.u-gap-215 { gap: 215px; }
+.u-gap-216 { gap: 216px; }
+.u-gap-217 { gap: 217px; }
+.badge-217 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-218 { gap: 218px; }
+.u-gap-219 { gap: 219px; }
+.u-gap-220 { gap: 220px; }
+.u-gap-221 { gap: 221px; }
+.u-gap-222 { gap: 222px; }
+.u-gap-223 { gap: 223px; }
+.u-gap-224 { gap: 224px; }
+.badge-224 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-225 { gap: 225px; }
+.u-gap-226 { gap: 226px; }
+.u-gap-227 { gap: 227px; }
+.u-gap-228 { gap: 228px; }
+.u-gap-229 { gap: 229px; }
+.u-gap-230 { gap: 230px; }
+.u-gap-231 { gap: 231px; }
+.badge-231 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-232 { gap: 232px; }
+.u-gap-233 { gap: 233px; }
+.u-gap-234 { gap: 234px; }
+.u-gap-235 { gap: 235px; }
+.u-gap-236 { gap: 236px; }
+.u-gap-237 { gap: 237px; }
+.u-gap-238 { gap: 238px; }
+.badge-238 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-239 { gap: 239px; }
+.u-gap-240 { gap: 240px; }
+.u-gap-241 { gap: 241px; }
+.u-gap-242 { gap: 242px; }
+.u-gap-243 { gap: 243px; }
+.u-gap-244 { gap: 244px; }
+.u-gap-245 { gap: 245px; }
+.badge-245 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-246 { gap: 246px; }
+.u-gap-247 { gap: 247px; }
+.u-gap-248 { gap: 248px; }
+.u-gap-249 { gap: 249px; }
+.u-gap-250 { gap: 250px; }
+.u-gap-251 { gap: 251px; }
+.u-gap-252 { gap: 252px; }
+.badge-252 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-253 { gap: 253px; }
+.u-gap-254 { gap: 254px; }
+.u-gap-255 { gap: 255px; }
+.u-gap-256 { gap: 256px; }
+.u-gap-257 { gap: 257px; }
+.u-gap-258 { gap: 258px; }
+.u-gap-259 { gap: 259px; }
+.badge-259 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-260 { gap: 260px; }
+.u-gap-261 { gap: 261px; }
+.u-gap-262 { gap: 262px; }
+.u-gap-263 { gap: 263px; }
+.u-gap-264 { gap: 264px; }
+.u-gap-265 { gap: 265px; }
+.u-gap-266 { gap: 266px; }
+.badge-266 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-267 { gap: 267px; }
+.u-gap-268 { gap: 268px; }
+.u-gap-269 { gap: 269px; }
+.u-gap-270 { gap: 270px; }
+.u-gap-271 { gap: 271px; }
+.u-gap-272 { gap: 272px; }
+.u-gap-273 { gap: 273px; }
+.badge-273 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-274 { gap: 274px; }
+.u-gap-275 { gap: 275px; }
+.u-gap-276 { gap: 276px; }
+.u-gap-277 { gap: 277px; }
+.u-gap-278 { gap: 278px; }
+.u-gap-279 { gap: 279px; }
+.u-gap-280 { gap: 280px; }
+.badge-280 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-281 { gap: 281px; }
+.u-gap-282 { gap: 282px; }
+.u-gap-283 { gap: 283px; }
+.u-gap-284 { gap: 284px; }
+.u-gap-285 { gap: 285px; }
+.u-gap-286 { gap: 286px; }
+.u-gap-287 { gap: 287px; }
+.badge-287 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-288 { gap: 288px; }
+.u-gap-289 { gap: 289px; }
+.u-gap-290 { gap: 290px; }
+.u-gap-291 { gap: 291px; }
+.u-gap-292 { gap: 292px; }
+.u-gap-293 { gap: 293px; }
+.u-gap-294 { gap: 294px; }
+.badge-294 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-295 { gap: 295px; }
+.u-gap-296 { gap: 296px; }
+.u-gap-297 { gap: 297px; }
+.u-gap-298 { gap: 298px; }
+.u-gap-299 { gap: 299px; }
+.u-gap-300 { gap: 300px; }
+.u-gap-301 { gap: 301px; }
+.badge-301 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-302 { gap: 302px; }
+.u-gap-303 { gap: 303px; }
+.u-gap-304 { gap: 304px; }
+.u-gap-305 { gap: 305px; }
+.u-gap-306 { gap: 306px; }
+.u-gap-307 { gap: 307px; }
+.u-gap-308 { gap: 308px; }
+.badge-308 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-309 { gap: 309px; }
+.u-gap-310 { gap: 310px; }
+.u-gap-311 { gap: 311px; }
+.u-gap-312 { gap: 312px; }
+.u-gap-313 { gap: 313px; }
+.u-gap-314 { gap: 314px; }
+.u-gap-315 { gap: 315px; }
+.badge-315 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-316 { gap: 316px; }
+.u-gap-317 { gap: 317px; }
+.u-gap-318 { gap: 318px; }
+.u-gap-319 { gap: 319px; }
+.u-gap-320 { gap: 320px; }
+.u-gap-321 { gap: 321px; }
+.u-gap-322 { gap: 322px; }
+.badge-322 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-323 { gap: 323px; }
+.u-gap-324 { gap: 324px; }
+.u-gap-325 { gap: 325px; }
+.u-gap-326 { gap: 326px; }
+.u-gap-327 { gap: 327px; }
+.u-gap-328 { gap: 328px; }
+.u-gap-329 { gap: 329px; }
+.badge-329 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-330 { gap: 330px; }
+.u-gap-331 { gap: 331px; }
+.u-gap-332 { gap: 332px; }
+.u-gap-333 { gap: 333px; }
+.u-gap-334 { gap: 334px; }
+.u-gap-335 { gap: 335px; }
+.u-gap-336 { gap: 336px; }
+.badge-336 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-337 { gap: 337px; }
+.u-gap-338 { gap: 338px; }
+.u-gap-339 { gap: 339px; }
+.u-gap-340 { gap: 340px; }
+.u-gap-341 { gap: 341px; }
+.u-gap-342 { gap: 342px; }
+.u-gap-343 { gap: 343px; }
+.badge-343 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-344 { gap: 344px; }
+.u-gap-345 { gap: 345px; }
+.u-gap-346 { gap: 346px; }
+.u-gap-347 { gap: 347px; }
+.u-gap-348 { gap: 348px; }
+.u-gap-349 { gap: 349px; }
+.u-gap-350 { gap: 350px; }
+.badge-350 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-351 { gap: 351px; }
+.u-gap-352 { gap: 352px; }
+.u-gap-353 { gap: 353px; }
+.u-gap-354 { gap: 354px; }
+.u-gap-355 { gap: 355px; }
+.u-gap-356 { gap: 356px; }
+.u-gap-357 { gap: 357px; }
+.badge-357 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-358 { gap: 358px; }
+.u-gap-359 { gap: 359px; }
+.u-gap-360 { gap: 360px; }
+.u-gap-361 { gap: 361px; }
+.u-gap-362 { gap: 362px; }
+.u-gap-363 { gap: 363px; }
+.u-gap-364 { gap: 364px; }
+.badge-364 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-365 { gap: 365px; }
+.u-gap-366 { gap: 366px; }
+.u-gap-367 { gap: 367px; }
+.u-gap-368 { gap: 368px; }
+.u-gap-369 { gap: 369px; }
+.u-gap-370 { gap: 370px; }
+.u-gap-371 { gap: 371px; }
+.badge-371 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-372 { gap: 372px; }
+.u-gap-373 { gap: 373px; }
+.u-gap-374 { gap: 374px; }
+.u-gap-375 { gap: 375px; }
+.u-gap-376 { gap: 376px; }
+.u-gap-377 { gap: 377px; }
+.u-gap-378 { gap: 378px; }
+.badge-378 { display:inline-block; padding:6px 8px; border-radius:6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
+.u-gap-379 { gap: 379px; }
+/* fim do style.css */
+
+
+/* Theme toggle button styling */
+#theme-toggle {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  border: 1px solid rgba(11,18,32,0.06);
+  background: linear-gradient(90deg, rgba(15,76,87,0.08), rgba(217,138,72,0.04));
+  color: var(--text);
+  cursor: pointer;
+  font-weight:600;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: var(--shadow-1);
+}
+#theme-toggle[aria-pressed="true"]{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(15,76,87,0.08);
+}
+
+/* Nav toggle (menu button) styling and centered appearance on mobile */
+.nav-toggle {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  border: none;
+  background: linear-gradient(180deg, rgba(15,76,87,0.08), rgba(217,138,72,0.03));
+  color: var(--accent);
+  font-size:20px;
+  cursor:pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: var(--shadow-1);
+}
+
+/* When displayed (mobile), center the nav-toggle inside header actions */
+.header-actions {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Ensure the small header variant aligns controls properly */
+.site-header.small .header-inner { padding: 10px 0; }
+.site-header .nav-toggle { margin-right: 6px; }
+
+/* Improve visibility of the mock carousel buttons */
+.carousel-prev, .carousel-next {
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  border: 1px solid rgba(11,18,32,0.06);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: var(--shadow-1);
+}
+
+/* Small responsive tweak: make header-actions full width on small screens so toggle appears central */
+@media (max-width:640px){
+  .header-inner { gap: 12px; }
+  .header-actions { width: 100%; justify-content: center; }
+  .nav-list { display: none; }
+}
+
+section { background: transparent; border: none; }
+
+.container { background: transparent; }
